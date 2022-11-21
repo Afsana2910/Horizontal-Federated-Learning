@@ -12,22 +12,21 @@ client2_localdata = dd.client2_data()
 client3_localdata = dd.client3_data()
 
 M, N = client1_localdata[0].shape
-
-# Create client instances
-client1 = participant(model, data=client1_localdata)
-client2 = participant(model, data=client2_localdata)
-client3 = participant(model, data=client3_localdata)
-
-initial_global_model = (np.zeros((N,1)),0)
-# Create server instance
-S = server(initial_global_model)
-
 communication_rounds = 100
 
 def predict(X,theta):
      return np.dot(X,theta[0]) + theta[1]
 
 if __name__=="__main__":
+    # Create client instances
+    client1 = participant(model, data=client1_localdata)
+    client2 = participant(model, data=client2_localdata)
+    client3 = participant(model, data=client3_localdata)
+
+    initial_global_model = (np.zeros((N,1)),0)
+    
+    S = server(initial_global_model)
+
     for round in range(communication_rounds):
         theta = S.send_to_clients()         #In the first iteration the initial_global_model is send to all the clients from the server
 
