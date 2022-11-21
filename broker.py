@@ -24,9 +24,9 @@ if __name__=="__main__":
     client3 = participant(model, data=client3_localdata)
 
     initial_global_model = (np.zeros((N,1)),0)
-    
+    # Create server instance
     S = server(initial_global_model)
-
+    
     for round in range(communication_rounds):
         theta = S.send_to_clients()         #In the first iteration the initial_global_model is send to all the clients from the server
 
