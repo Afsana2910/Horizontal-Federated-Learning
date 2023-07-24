@@ -4,5 +4,5 @@ This is a simple implementation of Horizontally Federated Linear Regression appl
 ![Algorithm for HFL](Algorithm.PNG)
 [Source: Federated learning on non-IID data: A survey](https://www.sciencedirect.com/science/article/abs/pii/S0925231221013254)
 
-NB: Citing or acknowledging this GitHub repository would be highly appreciated if used for any research purpose.
+NB: Citing this GitHub repository would be highly appreciated if used for any research purpose.
 
